@@ -1,0 +1,523 @@
+<title>Gabriela Galvin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #ffffff;
+    --paper-tint: #f8f5ee;
+    --ink: #1c1b18;
+    --ink-soft: #55534c;
+    --muted: #8c897f;
+    --line: rgba(28,27,24,0.15);
+    --line-soft: rgba(28,27,24,0.09);
+    --accent: #1f7a56;
+    --accent-soft: rgba(31,122,86,0.10);
+    --accent2: #b1791f;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Almarai", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead-rule { height: 4px; background: var(--accent); }
+
+  .wrap {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 6vw, 56px);
+  }
+
+  a { color: inherit; }
+
+  .serif { font-family: "Libre Caslon Text", Georgia, "Times New Roman", serif; }
+
+  .kicker {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header.site {
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+  }
+
+  .nav-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+
+  .site-name {
+    font-family: "Libre Caslon Text", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  nav.primary { display: flex; gap: 26px; font-size: 14.5px; font-weight: 700; }
+
+  nav.primary a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  nav.primary a:hover { color: var(--ink); border-color: var(--accent); }
+
+  /* ---------- Hero / About ---------- */
+
+  .hero-band {
+    background: var(--paper-tint);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero { padding: 60px 0 56px; }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .headshot {
+    display: block;
+    width: 160px;
+    height: 200px;
+    border-radius: 0;
+    object-fit: cover;
+    flex: none;
+    margin-top: 112px;
+    box-shadow: 0 0 0 1px var(--line);
+  }
+
+  @media (max-width: 680px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .headshot { width: 128px; height: 160px; order: -1; margin-top: 0; margin-bottom: 4px; }
+  }
+
+  h1.name {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 700;
+    line-height: 1.06;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  .role {
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin: 0 0 30px;
+  }
+
+  .bio p {
+    max-width: 62ch;
+    font-size: 17.5px;
+    color: var(--ink-soft);
+  }
+
+  .bio p strong { color: var(--ink); font-weight: 700; }
+
+  .top-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .top-links a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .top-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+
+  /* ---------- Section shell ---------- */
+
+  section.page { padding: 56px 0; }
+
+  .section-head { margin-bottom: 22px; }
+
+  .section-head h2 {
+    font-family: "Libre Caslon Text", serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 4px 0 8px;
+  }
+
+  .section-head p {
+    font-size: 15.5px;
+    color: var(--muted);
+    max-width: 58ch;
+    margin: 0;
+  }
+
+  /* ---------- Filter tabs ---------- */
+
+  .filter-tabs {
+    display: flex;
+    gap: 26px;
+    margin: 30px 0 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .filter-tabs button {
+    appearance: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--muted);
+    padding: 8px 2px 12px;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .filter-tabs button:hover { color: var(--ink); }
+
+  .filter-tabs button.active { color: var(--ink); border-color: var(--accent); }
+
+  .filter-tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ---------- Clip lists ---------- */
+
+  .year-label {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin: 30px 0 4px;
+  }
+
+  .year-label:first-child { margin-top: 22px; }
+
+  .year-label .num {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--accent);
+  }
+
+  .year-label .rule { flex: 1; height: 1px; background: var(--line-soft); }
+
+  .clip-list { list-style: none; margin: 0 0 0; padding: 0; }
+
+  .clip-list li { padding: 13px 0; border-bottom: 1px solid var(--line-soft); }
+
+  .clip-list li:last-child { border-bottom: none; }
+
+  .clip-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+
+  .clip-main { flex: 1; min-width: 240px; }
+
+  .clip-title {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 16.5px;
+    font-weight: 700;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .clip-title:hover { color: var(--accent); border-color: var(--accent); }
+
+  .clip-meta { display: block; color: var(--muted); font-size: 14.5px; margin-top: 2px; }
+
+  .cat-tag {
+    font-size: 13.5px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex: none;
+  }
+
+  .cat-tag.health { color: var(--accent); }
+  .cat-tag.cities { color: var(--accent2); }
+
+  .prize-flag {
+    font-style: italic;
+    color: var(--accent2);
+  }
+
+  .empty-note { color: var(--muted); font-size: 15px; padding: 18px 0; }
+
+  /* ---------- Footer ---------- */
+
+  footer.site {
+    background: var(--paper-tint);
+    border-top: 1px solid var(--line);
+    padding: 52px 0 44px;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    padding: 0;
+    margin: 10px 0 0;
+    list-style: none;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .contact-list a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .contact-list a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .foot-bottom {
+    margin-top: 36px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line-soft);
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+</style>
+
+<div class="masthead-rule"></div>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="#top" class="site-name">Gabriela Galvin</a>
+    <nav class="primary">
+      <a href="#about">About</a>
+      <a href="#clips">Clips</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero-band">
+    <section class="hero wrap" id="about">
+      <div class="hero-grid">
+        <div class="hero-text">
+<h1 class="name serif">Gabriela Galvin</h1>
+      <ul class="top-links">
+        <li><a href="mailto:mggalvinwrites@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/gaby-galvin-b2706a94/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://gabrielagalvin.substack.com/" target="_blank" rel="noopener">Newsletter</a></li>
+      </ul>
+      <div class="bio">
+        <p>I'm a freelance health journalist in London. I am originally from the U.S. and now cover public health issues across Europe and the globe.</p>
+        <p>I've also been a freelance journalist in Denmark and the Netherlands, and a staff reporter at news outlets in Washington, D.C., and Brussels. I specialize in reported features on how political and business decisions shape people's health and lives. In 2025, I won the European Press Prize's migration journalism award.</p>
+      </div>
+            </div>
+        <img class="headshot" src="data:image/jpeg;base64,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" alt="Gabriela Galvin" width="300" height="375">
+      </div>
+    </section>
+  </div>
+
+  <section class="page wrap" id="clips">
+    <div class="section-head">
+      <h2 class="serif">Selected Clips</h2>
+    </div>
+
+    <div class="filter-tabs" role="tablist" aria-label="Filter clips by topic">
+      <button type="button" class="active" data-filter="featured" role="tab" aria-selected="true">Featured</button>
+      <button type="button" data-filter="all" role="tab" aria-selected="false">All</button>
+      <button type="button" data-filter="health" role="tab" aria-selected="false">Health</button>
+      <button type="button" data-filter="cities" role="tab" aria-selected="false">Politics &amp; Cities</button>
+    </div>
+
+    <div id="clip-list"></div>
+  </section>
+</main>
+
+<footer class="site" id="contact">
+  <div class="wrap">
+    <h2 class="serif" style="font-size: 24px; font-weight: 700; margin: 0 0 16px;">Get in touch</h2>
+    <ul class="contact-list">
+      <li><a href="mailto:mggalvinwrites@gmail.com">mggalvinwrites@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/gaby-galvin-b2706a94/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://gabrielagalvin.substack.com/" target="_blank" rel="noopener">Newsletter</a></li>
+    </ul>
+    <div class="foot-bottom">© <span id="year"></span> Gabriela Galvin</div>
+  </div>
+</footer>
+
+<script>
+  const HEALTH = [
+    ["Jul 2026","How the EMA's Steffen Thirstrup is 'standing up for science'","Global Health NOW","https://globalhealthnow.org/2026-07/how-emas-steffen-thirstrup-standing-science"],
+    ["Jun 2026","The sperm-maxxing bros are actually onto something","WIRED","https://www.wired.com/story/sperm-maxxing-wellness-bros-mens-health/"],
+    ["Jun 2026","Inside Gavi's $189 million plan to boost Africa's vaccine ecosystem","Devex","https://www.devex.com/news/inside-gavi-s-189-million-plan-to-boost-africa-s-vaccine-ecosystem-112721"],
+    ["May 2026","Will the UK's generational tobacco ban survive?","Think Global Health","https://www.thinkglobalhealth.org/article/will-the-uks-generational-tobacco-ban-survive"],
+    ["May 2026","Why Europe can't get measles under control","Think Global Health","https://www.thinkglobalhealth.org/article/why-europe-cant-get-measles-under-control"],
+    ["Apr 2026","London opens new clinic for tuberculosis survivors","Think Global Health","https://www.thinkglobalhealth.org/article/london-opens-new-clinic-for-tuberculosis-survivors"],
+    ["Apr 2026","Protein chips, sex chocolate: what are 'functional foods', and do they actually boost health?","The Guardian","https://www.theguardian.com/global/2026/apr/02/what-are-functional-foods-healthy"],
+    ["Mar 2026","MAHA goes global: Inside the rise of the Make Europe Healthy Again movement","Stat News","https://www.statnews.com/2026/03/03/maha-movement-spreads-meha-make-europe-healthy-again/"],
+    ["Feb 2026","Psychedelic causes similar brain state to meditation","New Scientist","https://www.newscientist.com/article/2514090-psychedelic-causes-similar-brain-state-to-meditation/"],
+    ["Aug 2025","Can nature, art, and sport heal? Inside Europe's growing social prescribing movement","Euronews","https://www.euronews.com/health/2025/08/10/can-nature-art-and-sport-heal-inside-europes-growing-social-prescribing-movement"],
+    ["May 2025","Trump administration's funding freeze for foreign medical research to hit European scientists","Euronews","https://www.euronews.com/health/2025/05/02/trump-administrations-funding-freeze-for-foreign-medical-research-to-hit-european-scientis"],
+    ["Apr 2025","Measles, beef fat, and bird flu: What Europeans say about RFK Jr's Make America Healthy Again agenda","Euronews","https://www.euronews.com/health/2025/04/12/measles-beef-fat-and-bird-flu-what-europeans-say-about-rfk-jrs-make-america-healthy-again-"],
+    ["Apr 2025","Why the world's deadliest infectious disease is on the rise in the UK","Euronews","https://www.euronews.com/health/2025/04/20/why-is-tuberculosis-the-worlds-deadliest-infectious-disease-on-the-rise-in-the-uk"],
+    ["Mar 2025","Romania's measles crisis: What's driving Europe's biggest outbreak?","Euronews","https://www.euronews.com/health/2025/03/25/romanias-measles-crisis-whats-driving-europes-biggest-outbreak"],
+    ["Mar 2025","'Utterly devastating': Global health groups left reeling as European countries slash foreign aid","Euronews","https://www.euronews.com/health/2025/03/07/utterly-devastating-global-health-groups-left-reeling-as-european-countries-slash-foreign-"],
+    ["Feb 2025","'We changed mentally': How 3 years of war have squeezed Ukraine's health workers","Euronews","https://www.euronews.com/health/2025/02/24/we-changed-mentally-how-3-years-of-war-have-squeezed-ukraines-health-workers"],
+    ["Jan 2025","'Missing piece of the jigsaw': Glasgow hopes safe injection site will curb overdose deaths","Euronews","https://www.euronews.com/health/2025/01/28/missing-piece-of-the-jigsaw-glasgow-hopes-safe-injection-site-will-curb-overdose-deaths"],
+    ["Jan 2025","Flu season is in full swing. Why are vaccination rates down across Europe?","Euronews","https://www.euronews.com/health/2025/01/11/flu-season-is-in-full-swing-why-are-vaccination-rates-down-across-europe"],
+    ["Dec 2024","Fertility treatments are becoming more common in Europe. But who can access them?","Euronews","https://www.euronews.com/health/2024/12/30/fertility-treatments-are-becoming-more-common-in-europe-but-who-can-access-them"],
+    ["Dec 2024","After three years of negotiations, are hopes for a global pandemic treaty dead?","Euronews","https://www.euronews.com/health/2024/12/17/after-three-years-of-negotiations-are-hopes-for-a-global-pandemic-treaty-dead"],
+    ["Dec 2024","The UK is the latest country to ban puberty blockers for trans kids. Why is Europe restricting them?","Euronews","https://www.euronews.com/health/2024/12/13/the-uk-is-the-latest-country-to-ban-puberty-blockers-for-trans-kids-why-is-europe-restrict"],
+    ["Sep 2024","Psychedelic therapies are coming to Europe, but face barriers before reaching patients","Euronews","https://www.euronews.com/health/2024/09/24/psychedelic-therapies-are-coming-to-europe-but-face-barriers-before-reaching-patients"],
+    ["Jul 2024","Health authorities are running out of time to control a new mpox strain in the DRC","Euronews","https://www.euronews.com/health/2024/07/03/health-authorities-are-running-out-of-time-to-control-a-new-mpox-strain-in-the-drc"],
+    ["May 2024","Inside Amsterdam's struggle to support sex workers' health","Global Health NOW","https://globalhealthnow.org/2024-05/amsterdams-struggle-improve-sex-worker-health"],
+    ["Dec 2023","How genetic testing, new tech help in rare disease diagnoses","EUobserver","https://euobserver.com/health-post-pandemic/157845"],
+    ["Dec 2023","Keeping an eye on AI-powered drugs","EUobserver","https://euobserver.com/health-post-pandemic/157848"],
+    ["Dec 2022","US healthcare struggles to tackle maternal behavioral health crisis","Healthcare Brew","https://www.healthcare-brew.com/stories/2022/12/20/healthcare-struggles-mental-moms"],
+    ["Dec 2022","Denmark's long COVID patients feel abandoned by pandemic response","Euronews","https://www.euronews.com/my-europe/2022/11/30/denmarks-long-covid-patients-feel-abandoned-by-pandemic-response"],
+    ["Dec 2021","Clinical trials are slow and expensive. Industry leaders want that to change in 2022","Morning Consult","https://morningconsult.com/2021/12/21/clinical-trials-poll-2022/"],
+    ["Oct 2021","'A sinking ship': Pandemic's mental health toll continues to roil health care workers","Morning Consult","https://morningconsult.com/2021/10/04/health-care-workers-burnout/"],
+    ["Jan 2021","One year and 400,000 deaths: How the pandemic divided America","Morning Consult","https://morningconsult.com/2021/01/21/covid-one-year-anniversary/"],
+    ["Jul 2020","Dr. Anthony Fauci: Fighting COVID-19 'is my entire world'","U.S. News & World Report","https://health.usnews.com/hospital-heroes/articles/dr-anthony-fauci-fighting-the-coronavirus-pandemic-is-my-entire-world"],
+    ["May 2020","In coal country, pandemic poses a dual threat","U.S. News & World Report","https://www.usnews.com/news/healthiest-communities/articles/2020-05-14/coronavirus-pandemic-poses-dual-threat-in-virginia-coal-country"],
+    ["Apr 2020","Meet Rana Awdish, a critical care doctor on the coronavirus front lines","U.S. News & World Report","https://health.usnews.com/hospital-heroes/articles/meet-rana-awdish-a-critical-care-doctor-on-the-coronavirus-front-lines"],
+    ["Jan 2020","The U.S. has a maternal mortality rate again. Here's why that matters.","U.S. News & World Report","https://www.usnews.com/news/healthiest-communities/articles/2020-01-30/why-the-new-us-maternal-mortality-rate-is-important"],
+    ["Sep 2019","What happens when migrant children get cancer?","U.S. News & World Report","https://www.usnews.com/news/best-countries/articles/2019-09-05/washington-treats-children-of-migrant-workers-with-cancer"],
+    ["Sep 2019","The C-section capital of America","U.S. News & World Report","https://www.usnews.com/news/healthiest-communities/articles/2019-09-25/high-c-section-rates-at-birth-raise-questions-about-hospitals-health"],
+    ["Sep 2019","How California is leading efforts to curb C-sections","U.S. News & World Report","https://www.usnews.com/news/healthiest-communities/articles/2019-09-26/how-california-is-leading-efforts-to-curb-c-sections"],
+    ["Aug 2019","Family doctors key to solving maternity care shortage","U.S. News & World Report","https://www.usnews.com/news/healthiest-communities/articles/2019-08-27/family-doctors-key-to-solving-maternity-care-shortage"],
+    ["Aug 2019","A better return for older prisoners in New York","U.S. News & World Report","https://www.usnews.com/news/healthiest-communities/articles/2019-08-14/prisoner-reentry-program-eases-transition-for-older-new-york-inmates"],
+    ["Mar 2019","From the islands to the Ozarks: Marshall Islands migrants face health challenges in Arkansas","U.S. News & World Report","https://www.usnews.com/news/healthiest-communities/articles/2019-03-06/marshall-islands-migrants-face-health-challenges-in-arkansas"],
+    ["Jan 2019","Opioid crisis points to deadly new normal for America","U.S. News & World Report","https://www.usnews.com/news/health-news/articles/2019-01-28/opioid-crisis-points-to-deadly-new-normal-for-america"],
+    ["Jan 2019","Opioid crisis forcing grandparents to care for kids of addicts","U.S. News & World Report","https://www.usnews.com/news/health-news/articles/2019-01-28/opioid-crisis-forcing-grandparents-to-care-for-kids-of-addicts"]
+  ].map(r => [...r, "health"]);
+
+  const POLITICS = [
+    ["Jul 2026","Are parakeets such a problem they should be hunted for sport?","The Sunday Times","https://www.thetimes.com/uk/environment/article/parakeets-hunted-sport-qkqt722vp"],
+    ["Jan 2025","Live blog coverage of Trump's inauguration","Euronews","https://www.euronews.com/2025/01/20/all-eyes-on-washington-for-trump-inauguration"],
+    ["Nov 2024","Live blog coverage of US presidential election","Euronews","https://www.euronews.com/2024/11/06/us-election-2024-americans-set-to-go-out-and-vote-as-harris-trump-polls-too-close-to-call-"],
+    ["Jun 2024","Growing up 'non-western' in Denmark's nanny state","New Lines Magazine","https://newlinesmag.com/reportage/growing-up-non-western-in-denmarks-nanny-state/"],
+    ["Apr 2024","'Street to home, same day': LA's master leasing program to tackle homelessness","Smart Cities Dive","https://www.smartcitiesdive.com/news/la-approves-master-leasing-housing-plan-ease-homelessness/713581/"],
+    ["Mar 2024","Newark, New Jersey, sells residents $1 homes to fend off corporate property buyers","Smart Cities Dive","https://www.smartcitiesdive.com/news/newark-nj-sells-residents-1-homes-fend-off-corporate-property-buyers/709028/"],
+    ["Dec 2023","Having trouble hiring transit workers? Take a look at your hiring process.","Smart Cities Dive","https://www.smartcitiesdive.com/news/public-transit-workforce-hiring-bus-drivers-recruitment-trouble/701549/"],
+    ["Jun 2023","Cars will get more space after residents clash over complete streets pilot in Los Angeles area","Smart Cities Dive","https://www.smartcitiesdive.com/news/cars-get-more-space-residents-clash-over-complete-streets-pilot-ss4a-culver-city-la/652772/"],
+    ["Feb 2023","Pickleball is booming. Here's how cities are adapting to the craze.","Smart Cities Dive","https://www.smartcitiesdive.com/news/how-cities-adapting-us-pickleball-craze/642125/"],
+    ["Nov 2022","Denmark has a reputation for being family friendly — is it warranted?","U.S. News & World Report","https://www.usnews.com/news/best-countries/articles/2022-11-21/how-denmark-became-the-best-country-to-raise-kids"],
+    ["Oct 2022","Gentrification can push out longtime residents. Are collective neighborhood investments the solution?","Smart Cities Dive","https://www.smartcitiesdive.com/news/neighborhood-investment-trusts-reit-commercial-real-estate/634440/"],
+    ["Sep 2022","Basic income pilots gain momentum across US cities","Smart Cities Dive","https://www.smartcitiesdive.com/news/basic-income-pilots-cities-direct-cash-payments/631426/"],
+    ["Jan 2020","America's most diverse city Is still scarred by its past","U.S. News & World Report","https://www.usnews.com/news/cities/articles/2020-01-22/stockton-california-americas-most-diverse-city-is-still-scarred-by-its-past"],
+    ["May 2017","When supply exceeds demand, wages for Langley Park day laborers suffer","Capital News Service","https://cnsmaryland.org/2017/05/18/when-supply-exceeds-demand-wages-for-langley-park-day-laborers-suffer/"]
+  ].map(r => [...r, "cities"]);
+
+  const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const AP_MONTHS = { Jan:"Jan.", Feb:"Feb.", Mar:"March", Apr:"April", May:"May", Jun:"June", Jul:"July", Aug:"Aug.", Sep:"Sept.", Oct:"Oct.", Nov:"Nov.", Dec:"Dec." };
+  function apDate(dateStr){
+    const [mon, yr] = dateStr.split(" ");
+    return `${AP_MONTHS[mon] || mon} ${yr}`;
+  }
+  function sortKey(dateStr){
+    const [mon, yr] = dateStr.split(" ");
+    return parseInt(yr, 10) * 12 + MONTHS.indexOf(mon);
+  }
+
+  const ALL = [...HEALTH, ...POLITICS].sort((a, b) => sortKey(b[0]) - sortKey(a[0]));
+
+  const CAT_LABEL = { health: "Health", cities: "Politics & Cities" };
+
+  // Pieces that ran with a photo on the original site, in that site's own order
+  const FEATURED_ORDER = [
+    "https://newlinesmag.com/reportage/growing-up-non-western-in-denmarks-nanny-state/",
+    "https://www.statnews.com/2026/03/03/maha-movement-spreads-meha-make-europe-healthy-again/",
+    "https://www.theguardian.com/global/2026/apr/02/what-are-functional-foods-healthy",
+    "https://www.wired.com/story/sperm-maxxing-wellness-bros-mens-health/",
+    "https://www.euronews.com/health/2025/02/24/we-changed-mentally-how-3-years-of-war-have-squeezed-ukraines-health-workers",
+    "https://www.euronews.com/health/2025/03/25/romanias-measles-crisis-whats-driving-europes-biggest-outbreak",
+    "https://www.usnews.com/news/healthiest-communities/articles/2019-09-25/high-c-section-rates-at-birth-raise-questions-about-hospitals-health",
+    "https://www.usnews.com/news/best-countries/articles/2019-09-05/washington-treats-children-of-migrant-workers-with-cancer"
+  ];
+
+  const PRIZE_URL = "https://newlinesmag.com/reportage/growing-up-non-western-in-denmarks-nanny-state/";
+
+  function esc(s){
+    const d = document.createElement("div");
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function render(filter){
+    const data = filter === "all" ? ALL
+      : filter === "featured" ? FEATURED_ORDER.map(u => ALL.find(r => r[3] === u)).filter(Boolean)
+      : ALL.filter(r => r[4] === filter);
+    const container = document.getElementById("clip-list");
+    if (!data.length) {
+      container.innerHTML = '<p class="empty-note">No clips in this category yet.</p>';
+      return;
+    }
+    const showYears = filter !== "featured";
+    let html = "";
+    let currentYear = null;
+    let items = "";
+    data.forEach(([date, title, pub, url, cat]) => {
+      const year = date.split(" ").pop();
+      if (showYears && year !== currentYear) {
+        if (items) { html += `<ul class="clip-list">${items}</ul>`; items = ""; }
+        html += `<div class="year-label"><span class="num serif">${year}</span><span class="rule"></span></div>`;
+        currentYear = year;
+      }
+      const tag = (filter === "all" || filter === "featured") ? `<span class="cat-tag ${cat}">${esc(CAT_LABEL[cat])}</span>` : "";
+      const prize = url === PRIZE_URL ? ` <span class="prize-flag">— European Press Prize winner</span>` : "";
+      items += `<li><div class="clip-row">
+        <span class="clip-main">
+          <a class="clip-title" href="${url}" target="_blank" rel="noopener">${esc(title)}</a>
+          <span class="clip-meta">${esc(pub)}, ${esc(apDate(date))}${prize}</span>
+        </span>
+        ${tag}
+      </div></li>`;
+    });
+    if (items) html += `<ul class="clip-list">${items}</ul>`;
+    container.innerHTML = html;
+  }
+
+  render("featured");
+
+  document.querySelectorAll(".filter-tabs button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter-tabs button").forEach(b => {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      render(btn.dataset.filter);
+    });
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
