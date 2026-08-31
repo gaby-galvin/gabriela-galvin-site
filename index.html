@@ -478,7 +478,10 @@
     "https://www.usnews.com/news/best-countries/articles/2019-09-05/washington-treats-children-of-migrant-workers-with-cancer"
   ];
 
-  const PRIZE_URL = "https://newlinesmag.com/reportage/growing-up-non-western-in-denmarks-nanny-state/";
+ const PRIZE_URLS = {
+    "https://newlinesmag.com/reportage/growing-up-non-western-in-denmarks-nanny-state/": "European Press Prize winner",
+    "https://www.usnews.com/news/best-countries/articles/2019-09-05/washington-treats-children-of-migrant-workers-with-cancer": "2020 AACR June L. Biedler Prize for Cancer Journalism, finalist"
+  };
 
   function esc(s){
     const d = document.createElement("div");
@@ -507,7 +510,7 @@
         currentYear = year;
       }
       const tag = (filter === "all" || filter === "featured") ? `<span class="cat-tag ${cat}">${esc(CAT_LABEL[cat])}</span>` : "";
-      const prize = url === PRIZE_URL ? ` <span class="prize-flag">— European Press Prize winner</span>` : "";
+      const prize = PRIZE_URLS[url] ? ` <span class="prize-flag">— ${esc(PRIZE_URLS[url])}</span>` : "";
       items += `<li><div class="clip-row">
         <span class="clip-main">
           <a class="clip-title" href="${url}" target="_blank" rel="noopener">${esc(title)}</a>
